@@ -9,7 +9,6 @@ const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
 let visibleImages = [];
 
-// Dynamic image loader based on category
 async function loadImages(filter) {
   try {
     switch (filter) {
@@ -46,7 +45,6 @@ async function loadImages(filter) {
   }
 }
 
-// Renders gallery based on image data
 function renderGallery(imageData) {
   gallery.innerHTML = '';
   visibleImages = [];
@@ -63,7 +61,6 @@ function renderGallery(imageData) {
     gallery.appendChild(item);
   });
 
-  // Refresh visible image references and click listeners
   visibleImages = Array.from(document.querySelectorAll('.gallery .item img'));
 
   visibleImages.forEach(img => {
@@ -71,7 +68,7 @@ function renderGallery(imageData) {
   });
 }
 
-// Handles image click for modal view
+
 function onImageClick(e) {
   const clickedImg = e.target;
   currentIndex = visibleImages.indexOf(clickedImg);
@@ -80,7 +77,6 @@ function onImageClick(e) {
   }
 }
 
-// Displays modal with selected image
 function openModal(index) {
   const img = visibleImages[index];
   if (!img) return;
@@ -91,12 +87,12 @@ function openModal(index) {
   modal.style.display = 'flex';
 }
 
-// Closes the modal
+
 function closeModal() {
   modal.style.display = 'none';
 }
 
-// Shows next image in modal
+
 function showNextImage() {
   if (visibleImages.length === 0) return;
   currentIndex = (currentIndex + 1) % visibleImages.length;
@@ -105,7 +101,7 @@ function showNextImage() {
   modalCaption.textContent = img.alt || '';
 }
 
-// Button filter listener
+
 buttons.forEach(button => {
   button.addEventListener('click', async () => {
     document.querySelector('.filter-buttons .active')?.classList.remove('active');
@@ -117,7 +113,7 @@ buttons.forEach(button => {
   });
 });
 
-// Modal events
+
 closeBtn.addEventListener('click', closeModal);
 nextBtn.addEventListener('click', showNextImage);
 
@@ -127,5 +123,5 @@ modal.addEventListener('click', e => {
   }
 });
 
-// Load all images on first load
+
 loadImages('all').then(renderGallery);
