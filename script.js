@@ -83,7 +83,7 @@ function openModal(index) {
 
   currentIndex = index;
   modalImg.src = img.src;
-  modalCaption.textContent = img.alt || '';
+  // modalCaption.textContent = img.alt || '';
   modal.style.display = 'flex';
 }
 
