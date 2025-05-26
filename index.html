@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CollegeTips Gallery</title>
+  <meta name="description" content="Explore the official CollegeTips gallery featuring team vibes, creative campaigns, behind-the-scenes shots, and more.">
+  <meta property="og:image" content="https://www.collegetips.in/images/logo.jpg" />
+  <link rel="icon" href="https://www.collegetips.in/images/logo.jpg" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="filter-buttons">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="face">Our Face</button>
+    <button data-filter="team">Team Vibes</button>
+    <button data-filter="campaigns">Creative Campaigns</button>
+    <button data-filter="fun">Work Hard, Play Hard</button>
+    <button data-filter="bts">Behind-The-Scenes</button>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+    <div id="modal-caption"></div>
+  <button id="nextBtn" class="next-btn">Next &rarr;</button>
+  </div>
+
+  <!-- <script src="bts.js"></script>
+  <script src="fun.js"></script>
+  <script src="face.js"></script>
+  <script src="campaigns.js"></script>
+  <script src="team.js"></script> -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
